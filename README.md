@@ -13,11 +13,15 @@ A frequently used reporting query was tested on the SalesOrders table (500,000 r
 - Physical Reads: 0
 - Execution Plan Observations: Key Lookup present, Nested Loops join used
 
+  ![Execution Plan for IX_Bad](1.png)
+
 ### Optimized Index (IX_Optimized)
 - Execution Time: 89 ms (effectively negligible)
 - Logical Reads: 5
 - Physical Reads: 0
 - Execution Plan Observations: Key Lookup and Nested Loops eliminated
+
+![Execution Plan for IX_Optimized](2.png)
 
 ### Summary
 - Logical reads reduced from 1,522 → 5 (~99.7% reduction)
