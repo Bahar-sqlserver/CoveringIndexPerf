@@ -48,7 +48,7 @@ GO
 SELECT COUNT(*) FROM dbo.SalesOrders;
 
 -- Step 7: Create initial nonclustered index (IX_Bad)
-DROP INDEX IF EXISTS IX_Bad;
+DROP INDEX IF EXISTS IX_Bad ON dbo.SalesOrders;
 GO
 
 CREATE NONCLUSTERED INDEX IX_Bad
@@ -65,7 +65,7 @@ WHERE CustomerID = 128
 AND OrderStatus = 'C';
 GO
 -- Step 9: Create covering index 
-DROP INDEX IF EXISTS IX_Customer_Status_Cover;
+DROP INDEX IF EXISTS IX_Customer_Status_Cover ON dbo.SalesOrders;
 GO
 
 CREATE NONCLUSTERED INDEX IX_Customer_Status_Cover
@@ -83,3 +83,4 @@ GO
 SET STATISTICS IO OFF;
 SET STATISTICS TIME OFF;
 GO
+
