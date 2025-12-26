@@ -67,8 +67,8 @@ Query Execution Metrics:
 - Rows affected: 391,936
 - Logical reads: 2,372,593
 - Elapsed time: 5,899 ms
-- ![exec](exec_hvy3)
-  - [real_exec](exec_cover_write.sqlplan)
+- ![exec](exec_balanced_hvy.png)
+  - [real_exec](exec_balanced_hvy.sqlplan)
 
 ### Summary
 
