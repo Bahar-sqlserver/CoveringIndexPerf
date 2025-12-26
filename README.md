@@ -49,6 +49,17 @@ Query Execution Metrics:
 - Elapsed time: 956 ms
 
 - Stage 4 — Balanced Index: Optimized for both read performance and minimal write overhead, production-ready strategy.
+- Execution Time: 145 ms (effectively negligible)
+- Logical Reads: 3303
+- Physical Reads: 0
+- Execution Plan Observations: Index scan. Key Lookup and Nested Loops eliminated
+
+- ### Write-heavy scenario — Observe impact of heavy writes on balanced index.
+
+- Query Execution Metrics:
+- Rows affected: 391,941
+- Logical reads: 3,303
+- Elapsed time: 989 ms
 
 ### Summary
 - Logical reads reduced from 1,522 → 5 (~99.7% reduction)
