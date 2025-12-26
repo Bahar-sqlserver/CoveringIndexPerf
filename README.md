@@ -63,7 +63,7 @@ Query Execution Metrics:
 - Logical reads: 2,372,593
 - Elapsed time: 5,899 ms
 - ![exec](exec_hvy3)
-  - [real_exec](ExecPlan_Stage5_WriteHeavy.sqlplan)
+  - [real_exec](exec_cover_write.sqlplan)
 
 ### Summary
 
