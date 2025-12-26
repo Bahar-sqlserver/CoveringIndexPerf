@@ -138,7 +138,22 @@ Query Execution Metrics:
 
 ##**Stage 4 — Balanced Index: Optimized for both read performance and minimal write overhead**
 ##read test:
-Script: [ready strategy](Index3_Query.sql).
+Script: 
+```SQL
+ DROP INDEX IF EXISTS IX_Balanced ON dbo.SalesOrders;
+  GO
+
+  CREATE NONCLUSTERED INDEX IX_Balanced
+ON dbo.SalesOrders (CustomerID, OrderStatus)
+INCLUDE (OrderDate, TotalAmount);
+
+SELECT OrderDate, TotalAmount, ShipCountry
+FROM dbo.SalesOrders
+WHERE CustomerID = 128
+AND OrderStatus = 'C';
+GO
+```
+
 Query Execution Metrics:
 - Execution Time: 434 ms (effectively negligible)
 - Logical Reads: 340
