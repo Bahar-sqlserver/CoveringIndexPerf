@@ -15,8 +15,8 @@ Dataset
 ## Performance Analysis
 
 A frequently used reporting query was tested on the SalesOrders table (500,000 rows).
-[Bad index](Index1_Query.sql)
 
+[Bad index](Index1_Query.sql)
 ### Initial Index (IX_Bad)
 - Execution Time: 532 ms
 - Logical Reads: 1,703
@@ -28,8 +28,8 @@ Notes: Basic index, reduces some reads but still many Key Lookups.
   ![Execution Plan for IX_Bad](1.png)
 
 
-[covering_index](Index2_Query.sql)
-### Optimized Index (IX_Optimized)
+### Optimized Index 
+[covering_index_Optimized](Index2_Query.sql)
 - Execution Time: 387 ms 
 - Logical Reads: 4
 - Physical Reads: 0
@@ -53,7 +53,7 @@ Query Execution Metrics:
 - Execution Plan Observations: Index scan. Key Lookup and Nested Loops eliminated
 
 - ### Write-heavy scenario — Observe impact of heavy writes on balanced index.
-- [Write_strategy]()
+- [Write_strategy](Index3_HeavyUpdate.sql)
 
 - Query Execution Metrics:
 - Rows affected: 391,936
@@ -61,7 +61,4 @@ Query Execution Metrics:
 - Elapsed time: 5,899 ms
 
 ### Summary
-- Logical reads reduced from 1,522 → 5 (~99.7% reduction)
-- Execution plan cost drastically reduced
-- Physical reads remained zero, showing minimal I/O overhead
-- Index optimization effectively eliminated expensive operations
+
