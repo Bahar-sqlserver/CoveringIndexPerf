@@ -12,7 +12,7 @@ The project is divided into four stages to show a progressive analysis:
 
 Table: SalesOrders
 - Scripts:
-- ```SQL
+ ```SQL
   -- Step 3: Drop table if exists
 DROP TABLE IF EXISTS dbo.SalesOrders;
 GO
