@@ -181,7 +181,6 @@ WHERE OrderStatus = 'O'
 
 ```
 
-
 - Query Execution Metrics:
 - Rows affected: 391,936
 - Logical reads: 2,372,593
@@ -192,7 +191,7 @@ WHERE OrderStatus = 'O'
 - ✅ Improves overall system stability under write-heavy workloads
 - Execution Plan: ![exec](exec_balanced_hvy.png)
   - [real_exec](exec_balanced_hvy.sqlplan)
-
+```
 ### Summary
 This project highlights the real-world trade-offs of SQL Server index design:
 
