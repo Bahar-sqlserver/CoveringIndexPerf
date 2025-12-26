@@ -174,13 +174,9 @@ Execution Plan:![exec](exec_balanced.png)
 - Script:
 - ```SQL
   UPDATE dbo.SalesOrders
-  
- SET OrderStatus = 'C'
- 
-WHERE OrderStatus = 'O'
-
+   SET OrderStatus = 'C'
+   WHERE OrderStatus = 'O'
   AND CreatedAt < DATEADD(DAY, -7, GETDATE());
-  
   GO
 
 
