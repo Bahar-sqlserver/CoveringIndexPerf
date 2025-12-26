@@ -8,7 +8,7 @@ Wide Covering Index — Maximum read performance.
 Write-heavy scenario — Observe impact of heavy writes on previous index.
 Balanced Index — Optimized for both read and write.
 
-[table](CreateTableAndInsert.sql)
+[table](table.sql)
 
 
 ## Performance Analysis
