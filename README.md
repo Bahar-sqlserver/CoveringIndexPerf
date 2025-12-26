@@ -37,7 +37,7 @@ Notes: Basic index, reduces some reads but still many Key Lookups.
 
 ![Execution Plan for IX_Optimized](2.png)
 
-[Write-heavy scenario]()
+[Write-heavy scenario](HeavyUpdate_Index2.sql)
 Observe impact of heavy writes on previous index.
 
 Query Execution Metrics:
