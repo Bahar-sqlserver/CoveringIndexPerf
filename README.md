@@ -53,22 +53,37 @@ Query Execution Metrics:
 ##**Stage 4 — Balanced Index: Optimized for both read performance and minimal write overhead**
 ##read test:
 Script: [ready strategy](Index3_Query.sql).
+Query Execution Metrics:
 - Execution Time: 434 ms (effectively negligible)
 - Logical Reads: 340
 - Physical Reads: 0
 - Execution Plan Observations: Index scan. Key Lookup and Nested Loops eliminated
+- Conclusion:The query remains efficient, but the reduced index width slightly increases read I/O — an intentional trade-off.
+
 Execution Plan:![exec](exec_balanced.png)
 - [real_exec](execu_balanced_write.sqlplan)
 
-- ### Write-heavy scenario — Observe impact of heavy writes on balanced index.
+- ### Stage 5 -Write-heavy scenario — Observe impact of heavy writes on balanced index.
 - Script: [Write_strategy](Index3_HeavyUpdate.sql)
-
 - Query Execution Metrics:
 - Rows affected: 391,936
 - Logical reads: 2,372,593
 - Elapsed time: 5,899 ms
+- Conclusion: Compared to the wide covering index, the balanced index:
+- ✅ Reduces write I/O
+- ✅ Lowers elapsed time
+- ✅ Improves overall system stability under write-heavy workloads
 - Execution Plan: ![exec](exec_balanced_hvy.png)
   - [real_exec](exec_balanced_hvy.sqlplan)
 
 ### Summary
+This project highlights the real-world trade-offs of SQL Server index design:
+
+- Poor indexing leads to excessive Key Lookups and logical reads.
+- Covering indexes dramatically improve read performance.
+- Wide indexes introduce significant write and maintenance overhead.
+- Balanced indexes provide a practical compromise for production systems.
+
+Key takeaway:  
+**Indexing is not about making queries as fast as possible — it is about making the system performant, stable, and maintainable under real workloads.**
 
