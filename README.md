@@ -48,16 +48,13 @@ Query Execution Metrics:
 - ![exec](exec_hvy2)
 - [real_exec](ExecPlan_Stage3_WriteHeavy.sqlplan)
 
-- Stage 4 — Balanced Index: Optimized for both read performance and minimal write overhead
+Stage 4 — Balanced Index: Optimized for both read performance and minimal write overhead
 [ready strategy](Index3_Query.sql).
 - Execution Time: 434 ms (effectively negligible)
 - Logical Reads: 340
 - Physical Reads: 0
 - Execution Plan Observations: Index scan. Key Lookup and Nested Loops eliminated
-[exec](exec_balanced.png)
-
-
-
+![exec](exec_balanced.png)
 - [real_exec](execu_balanced_write.sqlplan)
 
 - ### Write-heavy scenario — Observe impact of heavy writes on balanced index.
