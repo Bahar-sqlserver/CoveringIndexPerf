@@ -25,6 +25,7 @@ A frequently used reporting query was tested on the SalesOrders table (500,000 r
 Notes: Basic index, reduces some reads but still many Key Lookups.
 
   ![Execution Plan for IX_Bad](1.png)
+  [real_exec](plan1.sqlplan)
 
 
 ### Optimized Index 
@@ -35,6 +36,7 @@ Notes: Basic index, reduces some reads but still many Key Lookups.
 - Execution Plan Observations: Key Lookup and Nested Loops eliminated
 
 ![Execution Plan for IX_Optimized](2.png)
+[real_exec](plan2.sqlplan)
 
 [Write-heavy scenario](HeavyUpdate_Index2.sql)
 Observe impact of heavy writes on previous index.
