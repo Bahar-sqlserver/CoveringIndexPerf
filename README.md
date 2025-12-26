@@ -183,7 +183,7 @@ WHERE OrderStatus = 'O'
   
   GO
 
-```
+
 
 - Query Execution Metrics:
 - Rows affected: 391,936
