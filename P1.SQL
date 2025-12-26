@@ -79,8 +79,11 @@ WHERE CustomerID = 128
 AND OrderStatus = 'C';
 GO
 
+--Step11: Update batch of open orders to completed
+UPDATE dbo.SalesOrders
+SET OrderStatus = 'C'
+WHERE OrderStatus = 'O'
+  AND CreatedAt < DATEADD(DAY, -7, GETDATE());
+  GO
 
-SET STATISTICS IO OFF;
-SET STATISTICS TIME OFF;
-GO
 
