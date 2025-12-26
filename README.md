@@ -53,7 +53,7 @@ GO
 
 -- Step 6: Count rows
 SELECT COUNT(*) FROM dbo.SalesOrders;
-
+```
 
 ## Performance Analysis
 A frequently used reporting query was tested on the SalesOrders table (500,000 rows).
