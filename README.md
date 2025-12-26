@@ -34,8 +34,8 @@ Notes: Basic index, reduces some reads but still many Key Lookups.
   ![Execution Plan for IX_Bad](1.png)
 
 ### Optimized Index (IX_Optimized)
-- Execution Time: 89 ms (effectively negligible)
-- Logical Reads: 5
+- Execution Time: 387 ms 
+- Logical Reads: 4
 - Physical Reads: 0
 - Execution Plan Observations: Key Lookup and Nested Loops eliminated
 
@@ -45,21 +45,21 @@ Notes: Basic index, reduces some reads but still many Key Lookups.
 
 Query Execution Metrics:
 - Rows affected: 391,936
-- Logical reads: 3,303
-- Elapsed time: 956 ms
+- Logical reads: 2,483,151
+- Elapsed time: 7,781 ms
 
 - Stage 4 — Balanced Index: Optimized for both read performance and minimal write overhead, production-ready strategy.
-- Execution Time: 145 ms (effectively negligible)
-- Logical Reads: 3303
+- Execution Time: 434 ms (effectively negligible)
+- Logical Reads: 340
 - Physical Reads: 0
 - Execution Plan Observations: Index scan. Key Lookup and Nested Loops eliminated
 
 - ### Write-heavy scenario — Observe impact of heavy writes on balanced index.
 
 - Query Execution Metrics:
-- Rows affected: 391,941
-- Logical reads: 3,303
-- Elapsed time: 989 ms
+- Rows affected: 391,936
+- Logical reads: 2,372,593
+- Elapsed time: 5,899 ms
 
 ### Summary
 - Logical reads reduced from 1,522 → 5 (~99.7% reduction)
