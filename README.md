@@ -9,7 +9,7 @@ Write-heavy scenario — Observe impact of heavy writes on previous index.
 Balanced Index — Optimized for both read and write.
 
 Dataset
-[The SalesOrders table](CreateTableAndInsertData.sql)
+[The SalesOrders table](CreateTableAndInsertData .sql)
 
 
 ## Performance Analysis
