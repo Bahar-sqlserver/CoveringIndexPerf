@@ -56,6 +56,7 @@ SELECT COUNT(*) FROM dbo.SalesOrders;
 ```
 
 ## Performance Analysis
+
 A frequently used reporting query was tested on the SalesOrders table (500,000 rows).
 
 ## Stage 1 — Initial Index (IX_Bad)
@@ -90,6 +91,7 @@ Notes: Basic index, reduces some reads but still many Key Lookups.
   [real_exec](plan1.sqlplan)
 
 ## Stage 2 — Wide Covering Index (Read-Optimized)
+
 Script: 
 ```SQL
 -- Step 9: Create covering index 
@@ -117,6 +119,7 @@ Query Execution Metrics:
 Execution Plan: ![Execution Plan for IX_Optimized](2.png)  [real_exec](EXEC_OPT.sqlplan)
 
 ## Stage 3 — Write-Heavy Scenario (Wide Index)
+
 Script: 
 ```SQL
 -- Update batch of open orders to completed
@@ -137,7 +140,9 @@ Query Execution Metrics:
 - [real_exec](exec_hvy_ind2.sqlplan)
 
 ##**Stage 4 — Balanced Index: Optimized for both read performance and minimal write overhead**
+
 ##read test:
+
 Script: 
 ```SQL
  DROP INDEX IF EXISTS IX_Balanced ON dbo.SalesOrders;
@@ -165,7 +170,18 @@ Execution Plan:![exec](exec_balanced.png)
 - [real_exec](execu_balanced_write.sqlplan)
 
 - ### Stage 5 -Write-heavy scenario — Observe impact of heavy writes on balanced index.
-- Script: [Write_strategy](Index3_HeavyUpdate.sql)
+- 
+- Script:
+- ```SQL
+  UPDATE dbo.SalesOrders
+SET OrderStatus = 'C'
+WHERE OrderStatus = 'O'
+  AND CreatedAt < DATEADD(DAY, -7, GETDATE());
+  GO
+
+```
+
+
 - Query Execution Metrics:
 - Rows affected: 391,936
 - Logical reads: 2,372,593
