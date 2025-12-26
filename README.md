@@ -45,7 +45,8 @@ Query Execution Metrics:
 - Rows affected: 391,936
 - Logical reads: 2,483,151
 - Elapsed time: 7,781 ms
-- ![exec](exec_hvy_ind2.png)
+- ![exec](exec1_4.png)
+-  ![exec](exec2_4.png)
 - [real_exec](exec_hvy_ind2.sqlplan)
 
 Stage 4 — Balanced Index: Optimized for both read performance and minimal write overhead
