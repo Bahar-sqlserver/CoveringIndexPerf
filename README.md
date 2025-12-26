@@ -36,7 +36,7 @@ Notes: Basic index, reduces some reads but still many Key Lookups.
 - Execution Plan Observations: Key Lookup and Nested Loops eliminated
 
 ![Execution Plan for IX_Optimized](2.png)
-[real_exec](plan2.sqlplan)
+[real_exec](EXEC_OPT.sqlplan)
 
 [Write-heavy scenario](HeavyUpdate_Index2.sql)
 Observe impact of heavy writes on previous index.
