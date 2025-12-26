@@ -9,14 +9,7 @@ Write-heavy scenario — Observe impact of heavy writes on previous index.
 Balanced Index — Optimized for both read and write.
 
 Dataset
-The SalesOrders table contains:
-|   Column   |   |   Description  |
-| CustomerID |   | 1,000 unique customers   |
-|  OrderDate |   | Random dates within the last year  |
-| OrderStatus|   | 20% 'C' (completed), 80% 'O' (open)|
-| TotalAmount|   |  Random decimal amounts   |
-| ShipCountry|   | USA, Germany, France, Canada  |
-| CreatedAt  |   |DateTime for record creation   |
+The SalesOrders table contains 
 
 
 ## Performance Analysis
