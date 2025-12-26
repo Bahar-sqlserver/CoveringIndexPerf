@@ -8,7 +8,7 @@ The project is divided into four stages to show a progressive analysis:
 ###**Wide Covering Index — Maximum read performance.**
 ###**Write-heavy scenario — Observe impact of heavy writes on previous index.**
 ###**Balanced Index — Optimized for both read and write.**
-##**project overview**: (1FullRepro_CoverIndex.sql)
+**All SQL scripts for this project are provided below.**:[scripts](1FullRepro_CoverIndex.sql)
 
 Table: SalesOrders
 - Scripts: [table](table.sql)
