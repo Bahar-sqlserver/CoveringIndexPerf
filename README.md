@@ -9,12 +9,13 @@ Write-heavy scenario — Observe impact of heavy writes on previous index.
 Balanced Index — Optimized for both read and write.
 
 Dataset
-The SalesOrders table contains 
+The SalesOrders table contains (CreateTableAndInsertData .sql)
 
 
 ## Performance Analysis
 
 A frequently used reporting query was tested on the SalesOrders table (500,000 rows).
+(Index1_Query.sql)
 
 ### Initial Index (IX_Bad)
 - Execution Time: 532 ms
@@ -26,6 +27,8 @@ Notes: Basic index, reduces some reads but still many Key Lookups.
 
   ![Execution Plan for IX_Bad](1.png)
 
+
+(Index2_Query.sql)
 ### Optimized Index (IX_Optimized)
 - Execution Time: 387 ms 
 - Logical Reads: 4
