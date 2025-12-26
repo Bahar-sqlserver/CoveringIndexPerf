@@ -54,6 +54,9 @@ Query Execution Metrics:
 - Logical Reads: 340
 - Physical Reads: 0
 - Execution Plan Observations: Index scan. Key Lookup and Nested Loops eliminated
+[exec](exec_balanced.png)
+
+
 
 - [real_exec](execu_balanced_write.sqlplan)
 
