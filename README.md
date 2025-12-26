@@ -59,7 +59,25 @@ SELECT COUNT(*) FROM dbo.SalesOrders;
 A frequently used reporting query was tested on the SalesOrders table (500,000 rows).
 
 ## Stage 1 — Initial Index (IX_Bad)
-[Bad index](Index1_Query.sql)
+```SQL
+-- Step 7: Create initial nonclustered index (IX_Bad)
+DROP INDEX IF EXISTS IX_Bad ON dbo.SalesOrders;
+GO
+
+CREATE NONCLUSTERED INDEX IX_Bad
+ON dbo.SalesOrders (CustomerID);
+GO
+
+-- Step 8: Test query before optimized index
+SET STATISTICS IO ON;
+SET STATISTICS TIME ON;
+GO
+SELECT OrderDate, TotalAmount, ShipCountry
+FROM dbo.SalesOrders
+WHERE CustomerID = 128
+AND OrderStatus = 'C';
+GO
+```
 Query Execution Metrics:
 - Execution Time: 532 ms
 - Logical Reads: 1,703
