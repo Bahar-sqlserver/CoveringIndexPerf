@@ -55,6 +55,8 @@ Query Execution Metrics:
 - Physical Reads: 0
 - Execution Plan Observations: Index scan. Key Lookup and Nested Loops eliminated
 
+- [real_exec](execu_balanced_write.sqlplan)
+
 - ### Write-heavy scenario — Observe impact of heavy writes on balanced index.
 - [Write_strategy](Index3_HeavyUpdate.sql)
 
