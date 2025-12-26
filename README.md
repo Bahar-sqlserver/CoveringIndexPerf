@@ -117,7 +117,16 @@ Query Execution Metrics:
 Execution Plan: ![Execution Plan for IX_Optimized](2.png)  [real_exec](EXEC_OPT.sqlplan)
 
 ## Stage 3 — Write-Heavy Scenario (Wide Index)
-Script: [Write-heavy scenario](HeavyUpdate_Index2.sql)
+Script: 
+```SQL
+-- Update batch of open orders to completed
+UPDATE dbo.SalesOrders
+SET OrderStatus = 'C'
+WHERE OrderStatus = 'O'
+  AND CreatedAt < DATEADD(DAY, -7, GETDATE());
+  GO
+```
+
 Observe impact of heavy writes on previous index.
 Query Execution Metrics:
 - Rows affected: 391,936
