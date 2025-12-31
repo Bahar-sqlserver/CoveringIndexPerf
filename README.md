@@ -1,14 +1,18 @@
 
-##**SQL Server Indexing Trade-Offs: Covering Index vs Balanced Index**
-##**Overview**
+**SQL Server Indexing Trade-Offs: Covering Index vs Balanced Index**
+**Overview**
 This project demonstrates the impact of SQL Server indexing strategies on query performance.
 It uses a synthetic dataset of 500,000 SalesOrders records to evaluate how different indexing approaches affect read performance, write cost, and overall system efficiency.
+
 The project is divided into four stages to show a progressive analysis:
-###**Bad Index — Nonclustered on CustomerID only.**
-###**Wide Covering Index — Maximum read performance.**
-###**Write-heavy scenario — Observe impact of heavy writes on previous index.**
-###**Balanced Index — Optimized for both read and write.**
-**All SQL scripts for this project are provided below.**:[scripts](1FullRepro_CoverIndex.sql)
+
+**Bad Index — Nonclustered on CustomerID only.**
+**Wide Covering Index — Maximum read performance.**
+**Write-heavy scenario — Observe impact of heavy writes on previous index.**
+**Balanced Index — Optimized for both read and write.**
+**All SQL scripts for this project are provided below.**:
+
+[scripts](1FullRepro_CoverIndex.sql)
 
 Table: SalesOrders
 - Scripts:
