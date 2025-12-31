@@ -7,9 +7,13 @@ It uses a synthetic dataset of 500,000 SalesOrders records to evaluate how diffe
 The project is divided into four stages to show a progressive analysis:
 
 **Bad Index — Nonclustered on CustomerID only.**
+
 **Wide Covering Index — Maximum read performance.**
+
 **Write-heavy scenario — Observe impact of heavy writes on previous index.**
+
 **Balanced Index — Optimized for both read and write.**
+
 **All SQL scripts for this project are provided below.**:
 
 [scripts](1FullRepro_CoverIndex.sql)
